@@ -1,1 +1,1 @@
-# Solidity Study 3 Fund This Contract
+# Solidity Study 3 "Funding a Contract"
