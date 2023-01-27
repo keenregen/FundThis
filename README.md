@@ -1,1 +1,1 @@
-# Solidity Study 3
+# Solidity Study 3 Fund This Contract
