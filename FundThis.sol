@@ -1,5 +1,4 @@
 // get funds from blch users to this contract
-// withdraw the funds
 // set a min funding value in usd
 
 // SPDX-License-Identifier: Blank
