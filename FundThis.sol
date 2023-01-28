@@ -1,16 +1,21 @@
 // get funds from blch users to this contract
 // set a min funding value in usd
+// keep funder addresses and fund amounts
 
 // SPDX-License-Identifier: Blank
+
+pragma solidity ^0.8.8;
 
 // import the interface
 import "./node_modules/@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
-pragma solidity ^0.8.8;
-
 // 1e18 = 1 * 10 * 10**18 wei = 1 ETH
 
 contract FundThis {
+
+    address[] public funders;
+
+    mapping(address => uint256) public addressToAmountFunded;
 
     uint256 public minUsd = 1 * 1e18;
 
@@ -19,6 +24,8 @@ contract FundThis {
         // if require condition is not met, the ops before are undone and gas remaining is sent back
         // msg.value : how much money is added to be sent
         require(getConverted(msg.value) >= minUsd, "min $1 is needed"); 
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender] = msg.value;
     }
 
     function getPrice() public view returns (uint256) {
