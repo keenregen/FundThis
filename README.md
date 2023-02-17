@@ -1,2 +1,2 @@
 # Solidity Study 3 "Funding a Contract"
-## FundThis for Remix
+## FundThis Contract To Work On Remix
